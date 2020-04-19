@@ -8,7 +8,8 @@ class Player:
 		self.top = 250
 		self.left = 250
 		self.item = ""
-		self.has_baby = False
+		self.baby = 0
+		self.deliver = False
 
 	def move(self):
 		ydiff = self.target[0] - self.top - 20
@@ -17,14 +18,14 @@ class Player:
 		xspeed = 0
 
 		if ydiff>0 and ydiff > 1:
-			yspeed=2
+			yspeed=3
 		elif ydiff<0 and ydiff < -1:
-			yspeed=-2
+			yspeed=-3
 		
 		if xdiff>0 and xdiff > 1:
-			xspeed=2
+			xspeed=3
 		elif xdiff<0 and xdiff < -1:
-			xspeed=-2
+			xspeed=-3
 
 		self.sprite.rect = self.sprite.rect.move(yspeed, xspeed)
 		self.top += yspeed

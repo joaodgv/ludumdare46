@@ -4,11 +4,3 @@ aliens get dropped in the day care center and you have to make sure their
  needs are being satisfied
 
 todo list:
-create the utilities sprites (water, food)
-making aliens appear
-making timers for the aliens to pick them up
-make crib
-create the starting menu
-create the end menu
-noises(baby noise)
-music

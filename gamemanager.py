@@ -8,28 +8,35 @@ class GameManager:
 		self.babies = []
 		self.score = 0
 		self.baby_to_pick = False
-		self.time_to_next_baby = 7000
+		self.time_to_next_baby = 20
 	
 	def get_babies(self):
 		return self.babies
 
 	def deliver_baby(self, baby):
-		self.babies.pop(baby)
-		self.n_babies -= 1
+		self.babies[baby.tag] = None
 		self.score += 1
 
 	def receive_baby(self):
-		baby = Alien(len(self.n_babies))
+		baby = Alien(self.n_babies)
 		self.babies.append(baby)
 		self.n_babies += 1
 
-	def update(time):
-		if(time > self.time_to_next_baby and not self.baby_to_pick):
-			
-			self.deliver_baby()
-		
+	def update(self, time):
+		self.time_to_next_baby -= time
+
+		if self.time_to_next_baby <= 0:
+			self.receive_baby()
+			self.time_to_next_baby  = 30
+
 		for i in self.babies:
-			if i.life == 0:
-				return 0
+			if (i != None):
+				if round(i.life/4,0) == 25:
+					return 0
+			
+				i.update(time)
+			
+		return 1
+			
 
 
