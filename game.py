@@ -60,8 +60,8 @@ def initloop():
 	gameloop()
 
 def gameloop():
-	pygame.mixer.music.load("assets/cry.mp3")
-	pygame.mixer.music.play(2)
+	#pygame.mixer.music.load("assets/cry.mp3")
+	#pygame.mixer.music.play(2)
 
 	##creating the classes (background, game manager, uimanager, player)
 	bg = Background()
